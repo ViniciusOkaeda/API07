@@ -8,16 +8,6 @@ namespace API07.Interfaces
 {
     interface IPedidoRepository
     {
-        List<Pedido> Listar();
 
-        List<Pedido> BuscarPorStatus(string status);
-
-        Pedido BuscarPorId(Guid id);
-
-        void Adicionar(Pedido pedido);
-
-        void Editar(Pedido pedido);
-
-        void Remover(Guid id);
     }
 }
