@@ -9,7 +9,7 @@ namespace API07.Domains
     public abstract class BaseDomain
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         public BaseDomain()
         {

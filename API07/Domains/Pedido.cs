@@ -11,6 +11,12 @@ namespace API07.Domains
 
         public DateTime OrderDate { get; set; }
 
+        // Relacionamento com a tabela PedidoItem 1,n
+        public List<PedidoItem> PedidosItens;
 
+        public Pedido()
+        {
+            PedidosItens = new List<PedidoItem>();
+        }
     }
 }

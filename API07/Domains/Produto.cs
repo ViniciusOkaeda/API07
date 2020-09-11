@@ -10,5 +10,8 @@ namespace API07.Domains
         public string Nome { get; set; }
 
         public float Preco { get; set; }
+
+        // Relacionamento com a tabela PedidoItem 1,n
+        public List<PedidoItem> PedidosItens;
     }
 }

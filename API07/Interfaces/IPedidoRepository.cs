@@ -8,6 +8,10 @@ namespace API07.Interfaces
 {
     interface IPedidoRepository
     {
+        List<Pedido> Listar();
 
+        Pedido BuscarPorId(Guid id);
+
+        Pedido Adicionar(List<PedidoItem> pedidosItens);
     }
 }

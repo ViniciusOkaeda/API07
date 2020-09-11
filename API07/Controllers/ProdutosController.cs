@@ -99,7 +99,6 @@ namespace API07.Controllers
         {
             try
             {
-                produto.Id = id;
                 _produtorepository.Editar(produto);
 
                 return Ok(produto);
