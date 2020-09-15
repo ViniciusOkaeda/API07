@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API07.Domains;
 using API07.Interfaces;
 using API07.Repositories;
+using API07.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -80,8 +81,15 @@ namespace API07.Controllers
 
             try
             {
-                // Adiciona um produto 
-                _produtorepository.Adicionar(produto);
+                if (produto.Imagem != null)
+                {
+                    var urlImagem = Upload.Local(produto.Imagem);
+
+                    produto.UrlImagem = urlImagem;
+                }
+
+                    // Adiciona um produto 
+                    _produtorepository.Adicionar(produto);
 
                 //Retorna ok com os dados do produto
                 return Ok(produto);
