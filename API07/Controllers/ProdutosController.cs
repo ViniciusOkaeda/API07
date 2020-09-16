@@ -24,6 +24,10 @@ namespace API07.Controllers
             _produtorepository = new ProdutoRepository();
         }
         // GET: api/<ProdutoController>
+        /// <summary>
+        /// Mostra todos os produtos cadastrados
+        /// </summary>
+        /// <returns>retorna lista de todos os produtos</returns>
         [HttpGet]
         public IActionResult Get()
         {
@@ -50,6 +54,11 @@ namespace API07.Controllers
         }
 
         // GET api/<ProdutoController>/5
+        /// <summary>
+        /// mostra um único produto com id especificado
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>retorna um produto</returns>
         [HttpGet("{id}")]
         public IActionResult Get(Guid id)
         {
@@ -75,6 +84,11 @@ namespace API07.Controllers
         }
 
         // POST api/<ProdutoController>
+        /// <summary>
+        /// Cadastra um novo produto
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns>Produto cadastrado</returns>
         [HttpPost]
         public IActionResult Post(Produto produto)
         {
@@ -102,6 +116,12 @@ namespace API07.Controllers
         }
 
         // PUT api/<ProdutoController>/5
+        /// <summary>
+        /// altera determinado produto
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="produto"></param>
+        /// <returns>retorna o produto alterado</returns>
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, Produto produto)
         {
@@ -119,6 +139,11 @@ namespace API07.Controllers
         }
 
         // DELETE api/<ProdutoController>/5
+        /// <summary>
+        /// Deleta um produto
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Mensagem de produto removido</returns>
         [HttpDelete("{id}")]
         public IActionResult Remover(Guid id)
         {
