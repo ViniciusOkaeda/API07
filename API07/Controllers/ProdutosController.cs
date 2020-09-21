@@ -72,9 +72,13 @@ namespace API07.Controllers
                 if (produto == null)
                     return NotFound();
 
+                    Moeda dolar = new Moeda();
+
+
+
                 //Caso o produto exista
-                //Retorna ok e os dados do produto
-                return Ok(produto);
+                //Retorna ok e os dados do produto com a conversão do real pra dolar.
+                return Ok(new { produto, valorDolar = dolar.GetDolarValue() * produto.Preco });
             }
             catch (Exception ex)
             {
